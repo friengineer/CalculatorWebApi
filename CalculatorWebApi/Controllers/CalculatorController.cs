@@ -39,5 +39,14 @@ namespace CalculatorWebApi.Controllers
 
             return Ok(resultObject);
         }
+
+        [HttpGet("divide")]
+        public IActionResult Divide(int firstNumber, int secondNumber)
+        {
+            var result = firstNumber / secondNumber;
+            var resultObject = new { Result = result };
+
+            return Ok(resultObject);
+        }
     }
 }
