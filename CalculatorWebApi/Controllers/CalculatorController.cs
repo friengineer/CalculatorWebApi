@@ -14,11 +14,12 @@ namespace CalculatorWebApi.Controllers
         }
 
         [HttpGet("add")]
-        public string Add(int firstNumber, int secondNumber)
+        public IActionResult Add(int firstNumber, int secondNumber)
         {
             var result = firstNumber + secondNumber;
-
-            return result.ToString();
+            var resultObject = new { Result = result };
+            
+            return Ok(resultObject);
         }
     }
 }
