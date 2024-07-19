@@ -30,5 +30,14 @@ namespace CalculatorWebApi.Controllers
 
             return Ok(resultObject);
         }
+
+        [HttpGet("multiply")]
+        public IActionResult Multiply(int firstNumber, int secondNumber)
+        {
+            var result = firstNumber * secondNumber;
+            var resultObject = new { Result = result };
+
+            return Ok(resultObject);
+        }
     }
 }
