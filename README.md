@@ -48,3 +48,17 @@ A request of `https://localhost:7126/Calculator/multiply?firstNumber=24&secondNu
     "result" : 144
 }
 ```
+
+### Divide
+Divide the first integer by the second integer and return the result in a JSON response. Uses a HTTP GET request.
+
+#### Path
+`/Calculator/divide?firstNumber=<x>&secondNumber=<y>` where `<x>` and `<y>` are integers.
+
+#### Example ran on localhost
+A request of `https://localhost:7126/Calculator/divide?firstNumber=24&secondNumber=6` returns the following response.
+```json
+{
+    "result" : 4
+}
+```
