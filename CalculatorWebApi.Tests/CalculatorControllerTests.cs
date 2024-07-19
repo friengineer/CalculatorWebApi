@@ -2,6 +2,7 @@ using CalculatorWebApi.Controllers;
 using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework.Internal;
+using System.Text.Json.Nodes;
 
 namespace CalculatorWebApi.Tests
 {
@@ -10,11 +11,14 @@ namespace CalculatorWebApi.Tests
         [Test]
         public void AddReturnsCorrectNumber()
         {
+            var expectedResponse = "{\"result\":15}";
+
             var logger = Mock.Of<ILogger<CalculatorController>>();
             var controller = new CalculatorController(logger);
-            var response = controller.Add(5, 10);
 
-            Assert.That(response, Is.EqualTo(15));
+            var actualResponse = controller.Add(5, 10);
+
+            Assert.That(actualResponse, Is.EqualTo(expectedResponse));
         }
     }
 }
