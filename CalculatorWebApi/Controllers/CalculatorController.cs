@@ -21,5 +21,14 @@ namespace CalculatorWebApi.Controllers
             
             return Ok(resultObject);
         }
+
+        [HttpGet("subtract")]
+        public IActionResult Subtract(int firstNumber, int secondNumber)
+        {
+            var result = firstNumber - secondNumber;
+            var resultObject = new { Result = result };
+
+            return Ok(resultObject);
+        }
     }
 }
