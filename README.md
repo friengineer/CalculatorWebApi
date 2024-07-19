@@ -35,3 +35,16 @@ A request of `https://localhost:7126/Calculator/subtract?firstNumber=24&secondNu
 }
 ```
 
+### Multiply
+Multiply two integers together and return the result in a JSON response. Uses a HTTP GET request.
+
+#### Path
+`/Calculator/multiply?firstNumber=<x>&secondNumber=<y>` where `<x>` and `<y>` are integers.
+
+#### Example ran on localhost
+A request of `https://localhost:7126/Calculator/multiply?firstNumber=24&secondNumber=6` returns the following response.
+```json
+{
+    "result" : 144
+}
+```
