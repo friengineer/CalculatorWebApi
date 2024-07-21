@@ -1,6 +1,6 @@
-@CalculatorWebApi_HostAddress = http://localhost:5259
+@CalculatorWebApi_HostAddress = https://localhost:7126
 
-GET {{CalculatorWebApi_HostAddress}}/weatherforecast/
+GET {{CalculatorWebApi_HostAddress}}/Calculator/
 Accept: application/json
 
 ###
