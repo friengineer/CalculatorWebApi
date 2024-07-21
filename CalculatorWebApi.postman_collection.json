@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "4f751f9e-34f8-418c-b50d-f8619c4e6bf7",
+		"name": "CalculatorWebApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37116286"
+	},
+	"item": [
+		{
+			"name": "Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstNumber\": 24,\r\n    \"secondNumber\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/Calculator/Add",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"Calculator",
+						"Add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Divide",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstNumber\": 24,\r\n    \"secondNumber\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/Calculator/Divide",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"Calculator",
+						"Divide"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multiply",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstNumber\": 24,\r\n    \"secondNumber\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/Calculator/Multiply",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"Calculator",
+						"Multiply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subtract",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstNumber\": 24,\r\n    \"secondNumber\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/Calculator/Subtract",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"Calculator",
+						"Subtract"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
