@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Nodes;
 
 namespace CalculatorWebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class CalculatorController : ControllerBase
     {
         private readonly ILogger<CalculatorController> _logger;
@@ -13,36 +14,44 @@ namespace CalculatorWebApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet("add")]
-        public IActionResult Add(int firstNumber, int secondNumber)
+        [HttpPost]
+        public IActionResult Add(JsonObject requestJson)
         {
+            var firstNumber = requestJson["firstNumber"]!.GetValue<int>();
+            var secondNumber = requestJson["secondNumber"]!.GetValue<int>();
             var result = firstNumber + secondNumber;
             var resultObject = new { Result = result };
-            
+
             return Ok(resultObject);
         }
 
-        [HttpGet("subtract")]
-        public IActionResult Subtract(int firstNumber, int secondNumber)
+        [HttpPost]
+        public IActionResult Subtract(JsonObject requestJson)
         {
+            var firstNumber = requestJson["firstNumber"]!.GetValue<int>();
+            var secondNumber = requestJson["secondNumber"]!.GetValue<int>();
             var result = firstNumber - secondNumber;
             var resultObject = new { Result = result };
 
             return Ok(resultObject);
         }
 
-        [HttpGet("multiply")]
-        public IActionResult Multiply(int firstNumber, int secondNumber)
+        [HttpPost]
+        public IActionResult Multiply(JsonObject requestJson)
         {
+            var firstNumber = requestJson["firstNumber"]!.GetValue<int>();
+            var secondNumber = requestJson["secondNumber"]!.GetValue<int>();
             var result = firstNumber * secondNumber;
             var resultObject = new { Result = result };
 
             return Ok(resultObject);
         }
 
-        [HttpGet("divide")]
-        public IActionResult Divide(int firstNumber, int secondNumber)
+        [HttpPost]
+        public IActionResult Divide(JsonObject requestJson)
         {
+            var firstNumber = requestJson["firstNumber"]!.GetValue<int>();
+            var secondNumber = requestJson["secondNumber"]!.GetValue<int>();
             var result = firstNumber / secondNumber;
             var resultObject = new { Result = result };
 
