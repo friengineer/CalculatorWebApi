@@ -8,9 +8,15 @@ namespace CalculatorWebApi.Tests
 {
     public class CalculatorControllerTests
     {
+        private static readonly JsonObject _requestPayload = new() { ["firstNumber"] = 10, ["secondNumber"] = 5 };
+        private ILogger<CalculatorController> _logger;
+        private CalculatorController _controller;
+
         [SetUp]
         public void Setup()
         {
+            _logger = Mock.Of<ILogger<CalculatorController>>();
+            _controller = new CalculatorController(_logger);
         }
 
         [Test]
@@ -18,12 +24,9 @@ namespace CalculatorWebApi.Tests
         {
             // Arrange
             var expectedResponse = new OkObjectResult(new { Result = 15 });
-            var requestPayload = new JsonObject { ["firstNumber"] = 10, ["secondNumber"] = 5 };
-            var logger = Mock.Of<ILogger<CalculatorController>>();
-            var controller = new CalculatorController(logger);
 
             // Act
-            var response = controller.Add(requestPayload);
+            var response = _controller.Add(_requestPayload);
             var okResponse = (OkObjectResult)response;
 
             // Assert
@@ -36,12 +39,9 @@ namespace CalculatorWebApi.Tests
         {
             // Arrange
             var expectedResponse = new OkObjectResult(new { Result = 5 });
-            var requestPayload = new JsonObject { ["firstNumber"] = 10, ["secondNumber"] = 5 };
-            var logger = Mock.Of<ILogger<CalculatorController>>();
-            var controller = new CalculatorController(logger);
 
             // Act
-            var response = controller.Subtract(requestPayload);
+            var response = _controller.Subtract(_requestPayload);
             var okResponse = (OkObjectResult)response;
 
             // Assert
@@ -54,12 +54,24 @@ namespace CalculatorWebApi.Tests
         {
             // Arrange
             var expectedResponse = new OkObjectResult(new { Result = 50 });
-            var requestPayload = new JsonObject { ["firstNumber"] = 10, ["secondNumber"] = 5 };
-            var logger = Mock.Of<ILogger<CalculatorController>>();
-            var controller = new CalculatorController(logger);
 
             // Act
-            var response = controller.Multiply(requestPayload);
+            var response = _controller.Multiply(_requestPayload);
+            var okResponse = (OkObjectResult)response;
+
+            // Assert
+            Assert.That(response, Is.TypeOf<OkObjectResult>());
+            Assert.That(okResponse.Value!.ToString(), Is.EqualTo(expectedResponse.Value!.ToString()));
+        }
+
+        [Test]
+        public void DivideReturnsCorrectResponse()
+        {
+            // Arrange
+            var expectedResponse = new OkObjectResult(new { Result = 2 });
+
+            // Act
+            var response = _controller.Divide(_requestPayload);
             var okResponse = (OkObjectResult)response;
 
             // Assert
