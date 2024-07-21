@@ -20,7 +20,7 @@ namespace CalculatorWebApi.Tests
         }
 
         [Test]
-        public void AddReturnsCorrectResponse()
+        public void Add_ReturnsOkResponse_WithCorrectResult()
         {
             // Arrange
             var expectedResponse = new OkObjectResult(new { Result = 15 });
@@ -35,7 +35,7 @@ namespace CalculatorWebApi.Tests
         }
 
         [Test]
-        public void SubtractReturnsCorrectResponse()
+        public void Subtract_ReturnsOkResponse_WithCorrectResult()
         {
             // Arrange
             var expectedResponse = new OkObjectResult(new { Result = 5 });
@@ -50,7 +50,7 @@ namespace CalculatorWebApi.Tests
         }
 
         [Test]
-        public void MultiplyReturnsCorrectResponse()
+        public void Multiply_ReturnsOkResponse_WithCorrectResult()
         {
             // Arrange
             var expectedResponse = new OkObjectResult(new { Result = 50 });
@@ -65,7 +65,7 @@ namespace CalculatorWebApi.Tests
         }
 
         [Test]
-        public void DivideReturnsCorrectResponse()
+        public void Divide_ReturnsOkResponse_WithCorrectResult()
         {
             // Arrange
             var expectedResponse = new OkObjectResult(new { Result = 2 });
