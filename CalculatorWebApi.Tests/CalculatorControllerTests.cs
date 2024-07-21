@@ -48,5 +48,23 @@ namespace CalculatorWebApi.Tests
             Assert.That(response, Is.TypeOf<OkObjectResult>());
             Assert.That(okResponse.Value!.ToString(), Is.EqualTo(expectedResponse.Value!.ToString()));
         }
+
+        [Test]
+        public void MultiplyReturnsCorrectResponse()
+        {
+            // Arrange
+            var expectedResponse = new OkObjectResult(new { Result = 50 });
+            var requestPayload = new JsonObject { ["firstNumber"] = 10, ["secondNumber"] = 5 };
+            var logger = Mock.Of<ILogger<CalculatorController>>();
+            var controller = new CalculatorController(logger);
+
+            // Act
+            var response = controller.Multiply(requestPayload);
+            var okResponse = (OkObjectResult)response;
+
+            // Assert
+            Assert.That(response, Is.TypeOf<OkObjectResult>());
+            Assert.That(okResponse.Value!.ToString(), Is.EqualTo(expectedResponse.Value!.ToString()));
+        }
     }
 }
