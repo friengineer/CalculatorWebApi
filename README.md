@@ -4,6 +4,7 @@ A RESTful web API to perform arithmetic operations on supplied numbers.
 ## Requirements
 - .NET 8
 - Visual Studio ASP.NET and web development workload
+- Postman (to use the Postman collection)
 
 ## Usage
 The API accepts HTTP POST requests that contain a JSON payload in the HTTP body with the below format where you can substitute the integers for your own values.
